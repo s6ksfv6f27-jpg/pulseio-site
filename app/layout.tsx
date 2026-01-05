@@ -16,3 +16,14 @@ export default function RootLayout({
     </html>
   )
 }
+pulselio-site/
+├─ app/
+│  ├─ layout.tsx
+│  ├─ page.tsx
+│  └─ globals.css
+├─ public/
+│  └─ favicon.ico
+├─ package.json
+├─ next.config.js
+├─ tsconfig.json
+└─ README.md
