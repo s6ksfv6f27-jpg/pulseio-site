@@ -5,9 +5,10 @@ export default function Home() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      fontFamily: 'system-ui'
+      background: '#0B0B0F',
+      color: '#FFFFFF',
     }}>
-      <h1>Pulseio funcionando 🚀</h1>
+      <h1>Pulseio</h1>
     </main>
   )
 }
