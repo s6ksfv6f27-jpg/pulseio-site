@@ -2,27 +2,27 @@ import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
-  title: "Pulseio - Decentralized Infrastructure for Real-Time Public Perception",
-  description: "Pulseio provides cutting-edge decentralized infrastructure for intelligent systems and real-time public perception analysis.",
-  keywords: ["pulseio", "decentralized", "infrastructure", "real-time", "public perception", "intelligent systems"],
-  authors: [{ name: "Pulseio" }],
+  title: "Pulse.io - The Operating System for Real-Time Intelligence",
+  description: "Transform signals into decisions — instantly. Pulse.io is a real-time intelligence platform built to process signals, data, and events at the speed of reality.",
+  keywords: ["pulse.io", "real-time intelligence", "AI", "decision engine", "signal processing", "enterprise intelligence", "real-time analytics"],
+  authors: [{ name: "Pulse.io" }],
   openGraph: {
-    title: "Pulseio - Decentralized Infrastructure",
-    description: "Decentralized infrastructure for real-time public perception",
+    title: "Pulse.io - Real-Time Intelligence Infrastructure",
+    description: "Transform signals into decisions — instantly. Real-time intelligence platform for mission-critical systems.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pulseio - Decentralized Infrastructure",
-    description: "Decentralized infrastructure for real-time public perception",
+    title: "Pulse.io - Real-Time Intelligence Infrastructure",
+    description: "Transform signals into decisions — instantly.",
   },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0a0a0a",
+  themeColor: "#000000",
 };
 
 export default function RootLayout({
