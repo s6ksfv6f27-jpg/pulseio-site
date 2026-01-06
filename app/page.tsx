@@ -139,7 +139,7 @@ export default function Home() {
         color: '#6b7280',
         fontSize: '0.875rem'
       }}>
-        <p>&copy; 2026 Pulseio. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Pulseio. All rights reserved.</p>
       </footer>
     </main>
   );
