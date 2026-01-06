@@ -51,7 +51,6 @@ export default function Home() {
           <p style={{
             fontSize: 'clamp(1rem, 2vw, 1.2rem)',
             color: '#aaaaaa',
-            marginBottom: '3rem',
             maxWidth: '900px',
             margin: '0 auto 3rem',
             lineHeight: '1.7'
@@ -223,7 +222,7 @@ export default function Home() {
               },
               { 
                 title: 'AI at the Core', 
-                desc: 'Artificial intelligence is not a feature — it\'s the foundation.' 
+                desc: 'Artificial intelligence is not a feature — it is the foundation.' 
               },
               { 
                 title: 'Enterprise-Grade Security', 
@@ -235,7 +234,7 @@ export default function Home() {
               },
               { 
                 title: 'Decision-First Architecture', 
-                desc: 'We don\'t generate dashboards. We generate decisions.' 
+                desc: 'We do not generate dashboards. We generate decisions.' 
               }
             ].map((item, i) => (
               <div key={i} style={{
