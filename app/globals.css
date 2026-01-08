@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #000000;
+  color: #ffffff;
+}
+
+:root {
+  --pulse-orange: #FF6A00;
+  --pulse-black: #000000;
+  --pulse-white: #ffffff;
+  --pulse-gray: #888888;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-glow {
+  filter: drop-shadow(0 0 20px rgba(255, 106, 0, 0.6))
+          drop-shadow(0 0 40px rgba(255, 106, 0, 0.4));
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(255, 106, 0, 0.6))
+            drop-shadow(0 0 40px rgba(255, 106, 0, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(255, 106, 0, 0.8))
+            drop-shadow(0 0 60px rgba(255, 106, 0, 0.6));
+  }
+}
+
+.pulse-animation {
+  animation: pulse-wave 2s ease-in-out infinite;
+}
+
+@keyframes pulse-wave {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.btn-primary {
+  padding: 1rem 2.5rem;
+  background: var(--pulse-orange);
+  color: var(--pulse-black);
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 106, 0, 0.5);
+}
+
+.btn-secondary {
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: var(--pulse-orange);
+  border: 2px solid var(--pulse-orange);
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background: var(--pulse-orange);
+  color: var(--pulse-black);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .logo {
+    max-width: 120px;
+  }
+}
