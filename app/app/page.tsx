@@ -1,3 +1,5 @@
+import WelcomeSpeech from "./components/WelcomeSpeech";
+
 export default function Home() {
   return (
     <main style={{
@@ -10,6 +12,7 @@ export default function Home() {
       color: "#ffffff",
       fontFamily: "system-ui"
     }}>
+      <WelcomeSpeech />
       <h1 style={{ fontSize: "3rem", marginBottom: "1rem" }}>
         Pulselio
       </h1>
