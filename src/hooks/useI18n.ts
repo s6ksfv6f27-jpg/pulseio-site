@@ -2,7 +2,17 @@
 
 import { useState, useEffect } from 'react';
 
-const translations: Record<string, any> = {
+const SUPPORTED_LANGUAGES = ['en', 'pt', 'es', 'ja', 'zh'] as const;
+type SupportedLanguage = typeof SUPPORTED_LANGUAGES[number];
+
+interface Translations {
+  title: string;
+  subtitle: string;
+  welcome: string;
+  description: string;
+}
+
+const translations: Record<SupportedLanguage, Translations> = {
   en: {
     title: 'Pulseio',
     subtitle: 'Infrastructure for intelligent systems',
@@ -35,7 +45,7 @@ const translations: Record<string, any> = {
   }
 };
 
-const languageVoiceMap: Record<string, string> = {
+const languageVoiceMap: Record<SupportedLanguage, string> = {
   en: 'en-US',
   pt: 'pt-BR',
   es: 'es-ES',
@@ -44,29 +54,45 @@ const languageVoiceMap: Record<string, string> = {
 };
 
 export const useI18n = () => {
-  const [language, setLanguage] = useState<string>('en');
+  const [language, setLanguage] = useState<SupportedLanguage>('en');
   const [hasPlayedAudio, setHasPlayedAudio] = useState<boolean>(false);
 
   useEffect(() => {
     // Detect browser language on mount
     if (typeof window !== 'undefined') {
       const browserLang = navigator.language.split('-')[0];
-      const supportedLang = ['en', 'pt', 'es', 'ja', 'zh'].includes(browserLang) ? browserLang : 'en';
+      const supportedLang = SUPPORTED_LANGUAGES.includes(browserLang as SupportedLanguage) 
+        ? (browserLang as SupportedLanguage) 
+        : 'en';
       setLanguage(supportedLang);
       
       // Get language from localStorage if exists
       const savedLang = localStorage.getItem('preferredLanguage');
-      if (savedLang && ['en', 'pt', 'es', 'ja', 'zh'].includes(savedLang)) {
-        setLanguage(savedLang);
+      if (savedLang && SUPPORTED_LANGUAGES.includes(savedLang as SupportedLanguage)) {
+        setLanguage(savedLang as SupportedLanguage);
       }
     }
   }, []);
 
   useEffect(() => {
-    // Play welcome audio when language changes
+    // Play welcome audio when language changes (only if user has interacted)
     if (typeof window !== 'undefined' && window.speechSynthesis && !hasPlayedAudio) {
-      playWelcomeAudio();
-      setHasPlayedAudio(true);
+      // Use setTimeout to ensure audio plays after user interaction
+      const handleFirstInteraction = () => {
+        playWelcomeAudio();
+        setHasPlayedAudio(true);
+        // Remove listeners after first interaction
+        document.removeEventListener('click', handleFirstInteraction);
+        document.removeEventListener('keydown', handleFirstInteraction);
+      };
+      
+      document.addEventListener('click', handleFirstInteraction);
+      document.addEventListener('keydown', handleFirstInteraction);
+      
+      return () => {
+        document.removeEventListener('click', handleFirstInteraction);
+        document.removeEventListener('keydown', handleFirstInteraction);
+      };
     }
   }, [language, hasPlayedAudio]);
 
@@ -105,16 +131,18 @@ export const useI18n = () => {
   };
 
   const changeLanguage = (newLang: string) => {
-    if (['en', 'pt', 'es', 'ja', 'zh'].includes(newLang)) {
-      setLanguage(newLang);
+    if (SUPPORTED_LANGUAGES.includes(newLang as SupportedLanguage)) {
+      setLanguage(newLang as SupportedLanguage);
       setHasPlayedAudio(false); // Allow audio to play again on language change
       if (typeof window !== 'undefined') {
         localStorage.setItem('preferredLanguage', newLang);
+        // Play audio immediately on manual language change
+        playWelcomeAudio();
       }
     }
   };
 
-  const t = (key: string): string => {
+  const t = (key: keyof Translations): string => {
     return translations[language]?.[key] || translations['en'][key] || key;
   };
 
@@ -125,3 +153,4 @@ export const useI18n = () => {
     playWelcomeAudio
   };
 };
+
