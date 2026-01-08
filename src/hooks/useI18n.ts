@@ -55,7 +55,7 @@ const languageVoiceMap: Record<SupportedLanguage, string> = {
 
 export const useI18n = () => {
   const [language, setLanguage] = useState<SupportedLanguage>('en');
-  const [hasPlayedAudio, setHasPlayedAudio] = useState<boolean>(false);
+  const [hasUserInteracted, setHasUserInteracted] = useState<boolean>(false);
 
   useEffect(() => {
     // Detect browser language on mount
@@ -75,12 +75,11 @@ export const useI18n = () => {
   }, []);
 
   useEffect(() => {
-    // Play welcome audio when language changes (only if user has interacted)
-    if (typeof window !== 'undefined' && window.speechSynthesis && !hasPlayedAudio) {
-      // Use setTimeout to ensure audio plays after user interaction
+    // Set up first interaction listener
+    if (typeof window !== 'undefined' && !hasUserInteracted) {
       const handleFirstInteraction = () => {
+        setHasUserInteracted(true);
         playWelcomeAudio();
-        setHasPlayedAudio(true);
         // Remove listeners after first interaction
         document.removeEventListener('click', handleFirstInteraction);
         document.removeEventListener('keydown', handleFirstInteraction);
@@ -94,7 +93,7 @@ export const useI18n = () => {
         document.removeEventListener('keydown', handleFirstInteraction);
       };
     }
-  }, [language, hasPlayedAudio]);
+  }, [hasUserInteracted]);
 
   const playWelcomeAudio = () => {
     if (typeof window !== 'undefined' && window.speechSynthesis) {
@@ -135,10 +134,14 @@ export const useI18n = () => {
       setLanguage(newLang as SupportedLanguage);
       if (typeof window !== 'undefined') {
         localStorage.setItem('preferredLanguage', newLang);
-        // Play audio immediately on manual language change (after a small delay to allow state update)
-        setTimeout(() => {
-          playWelcomeAudio();
-        }, 100);
+        // Play audio on language change if user has already interacted
+        if (hasUserInteracted) {
+          // Small delay to allow language state to update before speaking
+          const AUDIO_DELAY_MS = 100;
+          setTimeout(() => {
+            playWelcomeAudio();
+          }, AUDIO_DELAY_MS);
+        }
       }
     }
   };
