@@ -133,11 +133,12 @@ export const useI18n = () => {
   const changeLanguage = (newLang: string) => {
     if (SUPPORTED_LANGUAGES.includes(newLang as SupportedLanguage)) {
       setLanguage(newLang as SupportedLanguage);
-      setHasPlayedAudio(false); // Allow audio to play again on language change
       if (typeof window !== 'undefined') {
         localStorage.setItem('preferredLanguage', newLang);
-        // Play audio immediately on manual language change
-        playWelcomeAudio();
+        // Play audio immediately on manual language change (after a small delay to allow state update)
+        setTimeout(() => {
+          playWelcomeAudio();
+        }, 100);
       }
     }
   };
