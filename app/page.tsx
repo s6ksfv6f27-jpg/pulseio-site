@@ -60,8 +60,8 @@ export default function Home() {
           </p>
           
           <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="#contact" className="btn-primary">Request Early Access</a>
-            <a href="#contact" className="btn-secondary">Request a Demo</a>
+            <a href="mailto:info@pulseio.io" className="btn-primary">Request Early Access</a>
+            <a href="mailto:info@pulseio.io" className="btn-secondary">Request a Demo</a>
           </div>
         </div>
         
@@ -480,8 +480,8 @@ export default function Home() {
           </p>
           
           <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@pulse.io" className="btn-primary">Request Early Access</a>
-            <a href="mailto:contact@pulse.io" className="btn-secondary">Contact Pulse.io</a>
+            <a href="mailto:info@pulseio.io" className="btn-primary">Request Early Access</a>
+            <a href="mailto:info@pulseio.io" className="btn-secondary">Contact Pulse.io</a>
           </div>
         </div>
       </section>
@@ -514,7 +514,7 @@ export default function Home() {
             <a href="#" style={{ color: '#888888', textDecoration: 'none', transition: 'color 0.3s' }}
                onMouseEnter={(e) => e.currentTarget.style.color = '#FF6A00'}
                onMouseLeave={(e) => e.currentTarget.style.color = '#888888'}>Terms of Service</a>
-            <a href="mailto:contact@pulse.io" style={{ color: '#888888', textDecoration: 'none', transition: 'color 0.3s' }}
+            <a href="mailto:info@pulseio.io" style={{ color: '#888888', textDecoration: 'none', transition: 'color 0.3s' }}
                onMouseEnter={(e) => e.currentTarget.style.color = '#FF6A00'}
                onMouseLeave={(e) => e.currentTarget.style.color = '#888888'}>Contact</a>
           </div>
