@@ -2,6 +2,9 @@
 
 import { useEffect } from "react";
 
+// Delay before triggering speech synthesis to ensure page is fully loaded
+const SPEECH_DELAY_MS = 500;
+
 export default function WelcomeSpeech() {
   useEffect(() => {
     // Check if SpeechSynthesis API is available in the browser
@@ -24,7 +27,7 @@ export default function WelcomeSpeech() {
           // Silently handle errors to avoid breaking the site
           console.error("Speech synthesis error:", error);
         }
-      }, 500);
+      }, SPEECH_DELAY_MS);
 
       // Cleanup function to clear the timer
       return () => clearTimeout(timer);
