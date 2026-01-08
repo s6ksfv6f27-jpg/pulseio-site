@@ -95,16 +95,17 @@ export const useI18n = () => {
     }
   }, [hasUserInteracted]);
 
-  const playWelcomeAudio = () => {
+  const playWelcomeAudio = (lang?: SupportedLanguage) => {
+    const currentLang = lang || language;
     if (typeof window !== 'undefined' && window.speechSynthesis) {
       // Cancel any ongoing speech
       window.speechSynthesis.cancel();
       
-      const welcomeText = translations[language].welcome;
+      const welcomeText = translations[currentLang].welcome;
       const utterance = new SpeechSynthesisUtterance(welcomeText);
       
       // Set language for speech synthesis
-      utterance.lang = languageVoiceMap[language] || 'en-US';
+      utterance.lang = languageVoiceMap[currentLang] || 'en-US';
       utterance.rate = 0.9;
       utterance.pitch = 1;
       utterance.volume = 0.8;
@@ -131,15 +132,16 @@ export const useI18n = () => {
 
   const changeLanguage = (newLang: string) => {
     if (SUPPORTED_LANGUAGES.includes(newLang as SupportedLanguage)) {
-      setLanguage(newLang as SupportedLanguage);
+      const newLanguage = newLang as SupportedLanguage;
+      setLanguage(newLanguage);
       if (typeof window !== 'undefined') {
         localStorage.setItem('preferredLanguage', newLang);
         // Play audio on language change if user has already interacted
         if (hasUserInteracted) {
-          // Small delay to allow language state to update before speaking
+          // Small delay to ensure smooth transition, then play audio with new language
           const AUDIO_DELAY_MS = 100;
           setTimeout(() => {
-            playWelcomeAudio();
+            playWelcomeAudio(newLanguage);
           }, AUDIO_DELAY_MS);
         }
       }
