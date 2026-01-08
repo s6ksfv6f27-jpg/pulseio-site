@@ -11,7 +11,7 @@ export default function Home() {
           <div style={{ marginBottom: '3rem', display: 'flex', justifyContent: 'center' }}>
             <Image
               src="/logo.svg"
-              alt="Pulse.io Logo"
+              alt="PULSEIO.IO Logo"
               width={160}
               height={160}
               className="logo logo-glow"
@@ -55,7 +55,7 @@ export default function Home() {
             margin: '0 auto 3rem',
             lineHeight: '1.7'
           }}>
-            Pulse.io is a real-time intelligence platform built to process signals, data, and events at the speed of reality.
+            PULSEIO.IO is a real-time intelligence platform built to process signals, data, and events at the speed of reality.
             We don't analyze the past. We power decisions in the present.
           </p>
           
@@ -86,7 +86,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* What is Pulse.io */}
+      {/* What is PULSEIO.IO */}
       <section id="what-is" className="section" style={{ background: '#000000' }}>
         <div className="container" style={{ maxWidth: '900px', textAlign: 'center' }}>
           <h2 style={{
@@ -95,7 +95,7 @@ export default function Home() {
             marginBottom: '2rem',
             color: '#ffffff'
           }}>
-            What is Pulse.io
+            What is PULSEIO.IO
           </h2>
           
           <p style={{
@@ -104,7 +104,7 @@ export default function Home() {
             marginBottom: '2rem',
             lineHeight: '1.7'
           }}>
-            Pulse.io is a real-time decision engine designed for systems that cannot wait.
+            PULSEIO.IO is a real-time decision engine designed for systems that cannot wait.
           </p>
           
           <p style={{
@@ -114,7 +114,7 @@ export default function Home() {
             lineHeight: '1.8'
           }}>
             From financial markets to health signals, from smart infrastructure to enterprise operations, 
-            Pulse.io captures, processes, and transforms live data into actionable intelligence — instantly.
+            PULSEIO.IO captures, processes, and transforms live data into actionable intelligence — instantly.
           </p>
           
           <div style={{ fontSize: '1.3rem', lineHeight: '2', color: '#ffffff', marginBottom: '2rem' }}>
@@ -129,7 +129,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How Pulse.io Works */}
+      {/* How PULSEIO.IO Works */}
       <section id="how-it-works" className="section" style={{ background: '#0a0a0a' }}>
         <div className="container">
           <h2 style={{
@@ -139,7 +139,7 @@ export default function Home() {
             textAlign: 'center',
             color: '#ffffff'
           }}>
-            How Pulse.io Works
+            How PULSEIO.IO Works
           </h2>
           
           <div style={{
@@ -163,7 +163,7 @@ export default function Home() {
               { 
                 num: '3', 
                 title: 'Decide', 
-                desc: 'Pulse.io delivers immediate, reliable insights so systems and teams can act without hesitation.' 
+                desc: 'PULSEIO.IO delivers immediate, reliable insights so systems and teams can act without hesitation.' 
               }
             ].map((step, i) => (
               <div key={i} style={{ textAlign: 'center' }}>
@@ -191,13 +191,13 @@ export default function Home() {
               Real time is not fast enough.
             </p>
             <p style={{ fontSize: '1.5rem', fontWeight: '700', color: '#FF6A00' }}>
-              Pulse.io is faster.
+              PULSEIO.IO is faster.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Why Pulse.io */}
+      {/* Why PULSEIO.IO */}
       <section id="why" className="section" style={{ background: '#000000' }}>
         <div className="container">
           <h2 style={{
@@ -207,7 +207,7 @@ export default function Home() {
             textAlign: 'center',
             color: '#ffffff'
           }}>
-            Why Pulse.io
+            Why PULSEIO.IO
           </h2>
           
           <div style={{
@@ -230,7 +230,7 @@ export default function Home() {
               },
               { 
                 title: 'Scalable by Design', 
-                desc: 'From startups to global infrastructure, Pulse.io scales without friction.' 
+                desc: 'From startups to global infrastructure, PULSEIO.IO scales without friction.' 
               },
               { 
                 title: 'Decision-First Architecture', 
@@ -330,7 +330,7 @@ export default function Home() {
             marginBottom: '3rem',
             lineHeight: '1.7'
           }}>
-            Pulse.io is built on a modern, distributed, cloud-native architecture.
+            PULSEIO.IO is built on a modern, distributed, cloud-native architecture.
           </p>
           
           <div style={{
@@ -416,12 +416,12 @@ export default function Home() {
           </div>
           
           <p style={{ fontSize: '1.2rem', color: '#888888' }}>
-            Pulse.io is built for environments where failure is not an option.
+            PULSEIO.IO is built for environments where failure is not an option.
           </p>
         </div>
       </section>
 
-      {/* About Pulse.io */}
+      {/* About PULSEIO.IO */}
       <section id="about" className="section" style={{ background: '#000000' }}>
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
           <h2 style={{
@@ -430,7 +430,7 @@ export default function Home() {
             marginBottom: '4rem',
             color: '#ffffff'
           }}>
-            About Pulse.io
+            About PULSEIO.IO
           </h2>
           
           <div style={{ marginBottom: '3rem' }}>
@@ -452,7 +452,7 @@ export default function Home() {
           </div>
           
           <p style={{ fontSize: '1.2rem', color: '#888888', fontStyle: 'italic' }}>
-            Pulse.io exists to remove delay from decision-making.
+            PULSEIO.IO exists to remove delay from decision-making.
           </p>
         </div>
       </section>
@@ -481,7 +481,7 @@ export default function Home() {
           
           <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="mailto:info@pulseio.io" className="btn-primary">Request Early Access</a>
-            <a href="mailto:info@pulseio.io" className="btn-secondary">Contact Pulse.io</a>
+            <a href="mailto:info@pulseio.io" className="btn-secondary">Contact PULSEIO.IO</a>
           </div>
         </div>
       </section>
@@ -495,7 +495,7 @@ export default function Home() {
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ marginBottom: '1.5rem' }}>
-            <span style={{ fontSize: '1.5rem', fontWeight: '700', color: '#FF6A00' }}>Pulse.io</span>
+            <span style={{ fontSize: '1.5rem', fontWeight: '700', color: '#FF6A00' }}>PULSEIO.IO</span>
             <p style={{ fontSize: '0.9rem', color: '#888888', marginTop: '0.5rem' }}>
               Real-Time Intelligence Infrastructure
             </p>
@@ -520,7 +520,7 @@ export default function Home() {
           </div>
           
           <p style={{ color: '#888888', fontSize: '0.9rem' }}>
-            © {new Date().getFullYear()} Pulse.io
+            © {new Date().getFullYear()} PULSEIO.IO
           </p>
         </div>
       </footer>
