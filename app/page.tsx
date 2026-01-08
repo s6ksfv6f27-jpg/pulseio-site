@@ -11,7 +11,7 @@ export default function Home() {
       fontFamily: "system-ui"
     }}>
       <h1 style={{ fontSize: "3rem", marginBottom: "1rem" }}>
-        Pulselio
+        Pulseio
       </h1>
       <p style={{ fontSize: "1.2rem", opacity: 0.8 }}>
         Infrastructure for intelligent systems
