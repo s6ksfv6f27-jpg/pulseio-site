@@ -5,8 +5,10 @@ export default function OwlLogo({ size = 120 }: { size?: number }) {
       height={size}
       viewBox="0 0 200 200"
       xmlns="http://www.w3.org/2000/svg"
+      role="img"
       aria-label="Pulse.io Owl Logo"
     >
+      <title>Pulse.io Owl Logo</title>
       {/* Owl Body */}
       <ellipse cx="100" cy="120" rx="60" ry="70" fill="#FFA500" />
       
