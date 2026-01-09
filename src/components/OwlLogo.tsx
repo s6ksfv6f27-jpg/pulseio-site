@@ -15,10 +15,10 @@ const OwlLogo: React.FC<OwlLogoProps> = ({ size = 120 }) => {
       aria-label="Pulse.io Owl Logo"
     >
       {/* Owl body */}
-      <ellipse cx="60" cy="70" rx="35" ry="40" fill="#1a1a1a" stroke="#ffffff" strokeWidth="2"/>
+      <ellipse cx="60" cy="70" rx="35" ry="40" fill="#1a1a1a" stroke="#ffa500" strokeWidth="2"/>
       
       {/* Owl head */}
-      <circle cx="60" cy="40" r="30" fill="#2a2a2a" stroke="#ffffff" strokeWidth="2"/>
+      <circle cx="60" cy="40" r="30" fill="#2a2a2a" stroke="#ffa500" strokeWidth="2"/>
       
       {/* Left ear tuft */}
       <path d="M 35 20 L 30 5 L 40 15 Z" fill="#ffffff"/>
@@ -48,10 +48,10 @@ const OwlLogo: React.FC<OwlLogoProps> = ({ size = 120 }) => {
       <path d="M 60 48 L 55 58 L 65 58 Z" fill="#ffa500"/>
       
       {/* Left wing */}
-      <ellipse cx="30" cy="75" rx="12" ry="20" fill="#1a1a1a" stroke="#ffffff" strokeWidth="1.5" transform="rotate(-20 30 75)"/>
+      <ellipse cx="30" cy="75" rx="12" ry="20" fill="#1a1a1a" stroke="#ffa500" strokeWidth="1.5" transform="rotate(-20 30 75)"/>
       
       {/* Right wing */}
-      <ellipse cx="90" cy="75" rx="12" ry="20" fill="#1a1a1a" stroke="#ffffff" strokeWidth="1.5" transform="rotate(20 90 75)"/>
+      <ellipse cx="90" cy="75" rx="12" ry="20" fill="#1a1a1a" stroke="#ffa500" strokeWidth="1.5" transform="rotate(20 90 75)"/>
       
       {/* Chest feathers detail */}
       <ellipse cx="60" cy="75" rx="15" ry="18" fill="#3a3a3a" opacity="0.5"/>
